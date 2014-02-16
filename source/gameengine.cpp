@@ -1,9 +1,14 @@
+#include <ctime>
+#include <nds.h>
+#include <string.h>
 #include "h/gameengine.h"
 #include "h/gamestate.h"
 
 void GameEngine::Init()
 {
-
+	srand(clock());
+	videoSetMode(MODE_5_3D);
+	videoSetModeSub(MODE_0_2D);
 }
 
 void GameEngine::ChangeState(GameState* state) 
