@@ -39,14 +39,89 @@ public:
 	void Render(GameEngine* game);	
 	
 	static Intro* Instance() {
-		return &m_state;
+		return &_state;
 	}
 
 protected:
 	Intro() { }
 
 private:
-	static Intro m_state;
+	static Intro _state;
+
+};
+
+class Menu : public GameState
+{
+public:
+	void Init();
+	void Dispose();
+
+	void Pause();
+	void Resume();
+
+	void HandleEvents(GameEngine* game);
+	void Update(GameEngine* game);
+	void Render(GameEngine* game);	
+	
+	static Menu* Instance() {
+		return &_state;
+	}
+
+protected:
+	Menu() { }
+
+private:
+	static Menu _state;
+
+};
+
+class Game : public GameState
+{
+public:
+	void Init();
+	void Dispose();
+
+	void Pause();
+	void Resume();
+
+	void HandleEvents(GameEngine* game);
+	void Update(GameEngine* game);
+	void Render(GameEngine* game);	
+	
+	static Game* Instance() {
+		return &_state;
+	}
+
+protected:
+	Game() { }
+
+private:
+	static Game _state;
+
+};
+
+class GameOver : public GameState
+{
+public:
+	void Init();
+	void Dispose();
+
+	void Pause();
+	void Resume();
+
+	void HandleEvents(GameEngine* game);
+	void Update(GameEngine* game);
+	void Render(GameEngine* game);	
+	
+	static GameOver* Instance() {
+		return &_state;
+	}
+
+protected:
+	GameOver() { }
+
+private:
+	static GameOver _state;
 
 };
 

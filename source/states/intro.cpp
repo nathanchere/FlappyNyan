@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "h/gameengine.h"
-#include "h/gamestate.h"
+#include "../h/gameengine.h"
+#include "../h/gamestate.h"
 
-Intro Intro::m_state;
+Intro Intro::_state;
 
 void Intro::Init()
 {

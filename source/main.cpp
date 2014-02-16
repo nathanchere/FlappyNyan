@@ -45,7 +45,8 @@ int main()
 	
 	GameEngine game;
 	game.Init();
-	//game.ChangeState(Intro::Instance());
+
+	game.ChangeState(Intro::Instance());
 
 	while (1)
 	{
