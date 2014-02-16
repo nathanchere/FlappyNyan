@@ -1,5 +1,6 @@
 #include <nds.h>
 #include <stdio.h>
+#include <../lib/gl2d.h>
 #include "font.h"
 #include "../h/gameengine.h"
 #include "../h/gamestate.h"
