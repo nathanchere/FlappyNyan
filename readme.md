@@ -11,6 +11,7 @@ Credits and thanks
 * Nguyễn Hà Đông - the original Flappy Birds game
 * DevKitPro - making cross-compiling for NDS a breeze
 * no$gba - ultrea-light-weight emulator for shorter test cycles
+* Reference material: [GameDevGeek](http://gamedevgeek.com/tutorials/managing-game-states-in-c/), 
 
 License
 -------

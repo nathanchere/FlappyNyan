@@ -8,6 +8,11 @@ endif
 
 include $(DEVKITARM)/ds_rules
 
+GAME_TITLE	    :=	Text 1
+GAME_SUBTITLE1	:=	Text 2
+GAME_SUBTITLE2	:=	Text 3
+GAME_ICON		:=	$(CURDIR)/../icon.bmp
+
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
 # BUILD is the directory where object files & intermediate files will be placed
