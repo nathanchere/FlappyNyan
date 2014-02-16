@@ -38,6 +38,7 @@ void Intro::Init()
 	font.convertSingleColor = false;			
 	consoleSetFont(&bottomScreen, &font);
 
+	glScreen2D();
 	vramSetBankA( VRAM_A_TEXTURE );
 	vramSetBankE(VRAM_E_TEX_PALETTE); 
 	
@@ -82,13 +83,22 @@ void Intro::Update(GameEngine* game)
 void Intro::Render(GameEngine* game) 
 {	
 	glBegin2D();        
-	// Do stuff
+	
+	glBoxFilledGradient( 0, 0, 255, 191,
+								 RGB15( 31,  0,  0 ),
+								 RGB15(  0, 31,  0 ),
+								 RGB15( 31,  0, 31 ),
+								 RGB15(  0, 31, 31 )
+                               );
+			
+	glColor( RGB15(0,31,31) );
+	Font.PrintCentered( 0, 100, "Flappy Nyan" );
+	Font.PrintCentered( 0, 120, "Press any button to start" );
+	
 	glEnd2D();
 	glFlush(0);                    	
 
-	consoleSelect(&topScreen);	
-    iprintf("FlappyNyan\n");   
-    consoleSelect(&bottomScreen);
+	consoleSelect(&bottomScreen);
     iprintf("Press any button or tap screen\nto begin");
 	
 	swiWaitForVBlank();
