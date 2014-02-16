@@ -7,17 +7,20 @@
 
 #include "../h/global.h"
 
+#define TIMER_SPEED (BUS_CLOCK/1024)
 
 Intro Intro::_state;
+uint timeElapsed;
 
 void Intro::Init()
 {			
     iprintf("Intro.Init\n");
+	timerStart(0, ClockDivider_1024, 0, NULL);
 }
 
 void Intro::Dispose()
 {
-	
+	timerStop(0);
 }
 
 void Intro::Pause()
@@ -41,7 +44,7 @@ void Intro::HandleEvents(GameEngine* game)
 
 void Intro::Update(GameEngine* game) 
 {
-	
+	timeElapsed += timerElapsed(0);
 }
 
 void Intro::Render(GameEngine* game) 
@@ -58,7 +61,7 @@ void Intro::Render(GameEngine* game)
 	glColor( RGB15(0,31,31) );
 		
 	font_small.PrintCentered( 0, 100, "FLAPPY NYAN" );
-	font_small.PrintCentered( 0, 120, "Press any button to start" );
+	font_small.PrintCentered( 0, 120, timeElapsed / (TIMER_SPEED * 0.01));
 	
 	glEnd2D();
 	glFlush(0);                    		

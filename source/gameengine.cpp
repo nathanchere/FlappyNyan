@@ -9,6 +9,10 @@
 void GameEngine::Init()
 {
 	srand(clock());
+	
+	TIMER0_CR = TIMER_ENABLE|TIMER_DIV_1024;
+	TIMER1_CR = TIMER_ENABLE|TIMER_CASCADE;  
+	
 	videoSetMode(MODE_5_3D);
 	videoSetModeSub(MODE_0_2D);	
 	vramSetBankI( VRAM_I_SUB_BG_0x06208000 );	
