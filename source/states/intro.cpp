@@ -11,6 +11,8 @@
 
 Intro Intro::_state;
 uint timeElapsed;
+uint ticks;
+int color;
 
 void Intro::Init()
 {			
@@ -21,6 +23,7 @@ void Intro::Init()
 void Intro::Dispose()
 {
 	timerStop(0);
+	iprintf("Intro.Dispose\n");
 }
 
 void Intro::Pause()
@@ -45,26 +48,42 @@ void Intro::HandleEvents(GameEngine* game)
 void Intro::Update(GameEngine* game) 
 {
 	timeElapsed += timerElapsed(0);
+	ticks = timeElapsed / (BUS_CLOCK * 0.00001);
+	
+	if(ticks < 40)
+		color = 0;
+	else if(ticks < 168)
+	{
+		int val = (ticks - 40) * 0.25;
+		color = RGB15(val,val,val);
+	}
+	else if(ticks < 300)
+		color = RGB15(31,31,31);
+	else if(ticks < 428)
+	{
+		int val = 32 - ((ticks - 300) * 0.25);
+		color = RGB15(val,val,val);
+	}
+	else if(ticks < 450)
+		color = 0;
+	else game->ChangeState(Menu::Instance());
+	
 }
 
 void Intro::Render(GameEngine* game) 
 {	
 	glBegin2D();        
 	
-	glBoxFilledGradient( 0, 0, 0, 0,
-								 RGB15( 31,  0,  0 ),
-								 RGB15(  0, 31,  0 ),
-								 RGB15( 31,  0, 31 ),
-								 RGB15(  0, 31, 31 )
-                               );
-			
-	glColor( RGB15(0,31,31) );
+	glBoxFilled( 0, 0, 259, 191,0);
+	glColor(color);
 		
-	font_small.PrintCentered( 0, 100, "FLAPPY NYAN" );
-	font_small.PrintCentered( 0, 120, timeElapsed / (TIMER_SPEED * 0.01));
+	font_small.PrintCentered( 0, 100, "INTERESTING INTRO TEXT HERE..." );	
+	
+	glColor(RGB15(31,15,0));
+	//font_small.PrintCentered( 0, 120, color);	
+	//font_small.PrintCentered( 0, 140, ticks);	
 	
 	glEnd2D();
-	glFlush(0);                    		
-	
+	glFlush(0);                    			
 	swiWaitForVBlank();
 }
