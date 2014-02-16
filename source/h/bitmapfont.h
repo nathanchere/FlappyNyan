@@ -1,3 +1,6 @@
+#ifndef BITMAPFONT__H
+#define BITMAPFONT__H
+
 #include <nds.h>
 #include <stdio.h>
 #include <gl2d.h>
@@ -28,3 +31,5 @@ class BitmapFont
 	char		str[256];
 	char		str2[256];
 };
+
+#endif

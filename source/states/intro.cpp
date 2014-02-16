@@ -73,14 +73,11 @@ void Intro::Resume()
 
 }
 
-int result;
-
 void Intro::HandleEvents(GameEngine* game)
 {
 	scanKeys();
 	int held = keysHeld();
-	if(held & KEY_A);
-	result = held;
+	if(held & KEY_A) game->ChangeState(Menu::Instance());
 }
 
 
@@ -105,7 +102,6 @@ void Intro::Render(GameEngine* game)
 		
 	Font.PrintCentered( 0, 100, "FLAPPY NYAN" );
 	Font.PrintCentered( 0, 120, "Press any button to start" );
-	Font.PrintCentered( 0, 140, result );
 	
 	glEnd2D();
 	glFlush(0);                    		
