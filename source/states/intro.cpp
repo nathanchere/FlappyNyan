@@ -2,13 +2,11 @@
 #include <stdio.h>
 #include <../lib/gl2d.h>
 
-#include "../h/bitmapfont.h"
-
 #include "../h/gamestate.h"
 #include "../h/gameengine.h"
-#include "../h/gamestate.h"
 
 #include "../h/global.h"
+
 
 Intro Intro::_state;
 
