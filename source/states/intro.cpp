@@ -1,16 +1,22 @@
 #include <nds.h>
 #include <stdio.h>
 #include <../lib/gl2d.h>
+
 #include "font.h"
 #include "font_8x8.h"
+#include "../h/font_8x8_uv.h"
+
+#include "../h/gamestate.h"
 #include "../h/gameengine.h"
 #include "../h/gamestate.h"
 
 Intro Intro::_state;
 
 ConsoleFont font;
+
 PrintConsole topScreen;
 PrintConsole bottomScreen;
+glImage  FontImages[FONT_8X8_NUM_IMAGES];
 
 void Intro::Init()
 {	

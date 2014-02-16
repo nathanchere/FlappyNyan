@@ -7,13 +7,13 @@
 ======================================================================*/
 
 
-#ifndef FONT_SI__H
-#define FONT_SI__H
+#ifndef FONT_8X8__H
+#define FONT_8X8__H
 
 
-#define FONT_SI_BITMAP_WIDTH   64
-#define FONT_SI_BITMAP_HEIGHT  128
-#define FONT_SI_NUM_IMAGES   96
+#define FONT_8X8_BITMAP_WIDTH   64
+#define FONT_8X8_BITMAP_HEIGHT  128
+#define FONT_8X8_NUM_IMAGES   96
 
 
 		//	Format:
