@@ -8,9 +8,9 @@ endif
 
 include $(DEVKITARM)/ds_rules
 
-GAME_TITLE	    :=	Text 1
-GAME_SUBTITLE1	:=	Text 2
-GAME_SUBTITLE2	:=	Text 3
+GAME_TITLE	    :=	Flappy Nyan
+GAME_SUBTITLE1	:=	(c)2014 Nathan Chere
+GAME_SUBTITLE2	:=	http://github.com/nathanchere/flappynyan
 GAME_ICON		:=	$(CURDIR)/../icon.bmp
 
 #---------------------------------------------------------------------------------
@@ -51,14 +51,14 @@ LDFLAGS	=	-specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -lgl2d -lnds9
+LIBS	:= -lnflib -lnds9
  
  
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(LIBNDS)
+LIBDIRS	:=	$(LIBNDS) $(CURDIR)/nflib
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
