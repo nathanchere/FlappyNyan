@@ -59,9 +59,15 @@ void Intro::Update(GameEngine* game)
 
 void Intro::Render(GameEngine* game) 
 {	
-	consoleSelect(&topScreen);
-	
+	glBegin2D();        
+	// Do stuff
+	glEnd2D();
+	glFlush(0);                    	
+
+	consoleSelect(&topScreen);	
     iprintf("FlappyNyan\n");   
     consoleSelect(&bottomScreen);
     iprintf("Press any button or tap screen\nto begin");
+	
+	swiWaitForVBlank();
 }
