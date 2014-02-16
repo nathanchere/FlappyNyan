@@ -19,12 +19,9 @@ Credits and thanks
 * Nguyễn Hà Đông - the original Flappy Birds game
 * DevKitPro - making cross-compiling for NDS a breeze
 * no$gba - ultrea-light-weight emulator for shorter test cycles
-<<<<<<< Updated upstream
-=======
-* Rel - Easy GL2D DS library
+* Relminator - Easy GL2D DS library
 * Adigun A. Polack - font graphics
 * Reference material: [GameDevGeek](http://gamedevgeek.com/tutorials/managing-game-states-in-c/), 
->>>>>>> Stashed changes
 
 License
 -------
