@@ -5,12 +5,26 @@ I wanted to make a Nyan Cat themed variant of the overnight sensation Flappy Bir
 
 It's such a trivial game that the Google Play and iTunes app stores are already full of half-baked clones by unimaginative developers. While I'm happy to share my code for others to learn from, I have no desire to assist said parasites in further flooding the app stores by providing a template they can make minimal changes to (usually adding ads and in-app purchases) then submit as their own work. Since it's one of the last remaining 'pure' gaming platforms I decided it would be a good opportunity to learn how to develop for the Nintendo DS.
 
+Dependencies
+------------
+[Easy GL2D DS](http://rel.phatcode.net/junk.php?id=117) for 3D-accelerated 2D wrapper.
+
+[Rel's Texture Packer](http://rel.phatcode.net/junk.php?id=106) used for generating textures for sprite and font maps.
+
+
+
 Credits and thanks
 ------------------
 
 * Nguyễn Hà Đông - the original Flappy Birds game
 * DevKitPro - making cross-compiling for NDS a breeze
 * no$gba - ultrea-light-weight emulator for shorter test cycles
+<<<<<<< Updated upstream
+=======
+* Rel - Easy GL2D DS library
+* Adigun A. Polack - font graphics
+* Reference material: [GameDevGeek](http://gamedevgeek.com/tutorials/managing-game-states-in-c/), 
+>>>>>>> Stashed changes
 
 License
 -------
