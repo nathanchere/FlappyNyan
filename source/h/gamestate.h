@@ -21,28 +21,32 @@ public:
 	}
 
 protected:
-	GameState() { }
+	GameState() { }	
 };
 
-class IntroState : public GameState
-{
-public:
-	void Init();
-	void Dispose();
+class State{
 
-	void Pause();
-	void Resume();
+	class Intro : public GameState
+	{
+	public:
+		void Init();
+		void Dispose();
 
-	void HandleEvents(GameEngine* game);
-	void Update(GameEngine* game);
-	void Render(GameEngine* game);
+		void Pause();
+		void Resume();
 
-	static IntroState* Instance() {	return &_introState; }
+		void HandleEvents(GameEngine* game);
+		void Update(GameEngine* game);
+		void Render(GameEngine* game);
 
-protected:
-	IntroState() { }
+		static Intro* Instance() {	return &_State; }
 
-private:
-	static IntroState _introState;
+	protected:
+		Intro() { }
+
+	private:
+		static Intro _State;
+	};
 };
+
 #endif
