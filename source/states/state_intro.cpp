@@ -2,39 +2,39 @@
 #include "h/gameengine.h"
 #include "h/gamestate.h"
 
-IntroState IntroState::_State;
+Intro Intro::m_state;
 
-void IntroState::Init()
+void Intro::Init()
 {
 	
 }
 
-void IntroState::Dispose()
+void Intro::Dispose()
 {
 	
 }
 
-void IntroState::Pause()
+void Intro::Pause()
 {
 	
 }
 
-void IntroState::Resume()
+void Intro::Resume()
 {
 
 }
 
-void IntroState::HandleEvents(GameEngine* game)
-{
-	
-}
-
-void IntroState::Update(GameEngine* game) 
+void Intro::HandleEvents(GameEngine* game)
 {
 	
 }
 
-void IntroState::Render(GameEngine* game) 
+void Intro::Update(GameEngine* game) 
+{
+	
+}
+
+void Intro::Render(GameEngine* game) 
 {
 	
 }

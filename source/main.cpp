@@ -5,6 +5,8 @@
 #include <string.h>
 //#include <gl2d.h>
 #include "font.h"
+#include "h/gameengine.h"
+#include "h/gamestate.h"
 
 int main() 
 {	
@@ -40,12 +42,18 @@ int main()
     iprintf("FlappyNyan");   
     consoleSelect(&bottomScreen);
     iprintf("Press any button or tap screen\nto begin");
-		
-	while(1) 
-	{
 	
-		//glFlush( 0 );
-		swiWaitForVBlank();			
+	GameEngine game;
+	game.Init();
+	//game.ChangeState(Intro::Instance());
+
+	while (1)
+	{
+		game.HandleEvents();
+		game.Update();
+		game.Render();
+		
+		//swiWaitForVBlank();			
 	}
 
 	return 0;
