@@ -1,18 +1,22 @@
+#include <ctime>
+#include <cmath>
 #include <nds.h>
 #include <stdio.h>
 #include <string.h>
-#include <gl2d.h>
+//#include <gl2d.h>
 #include "font.h"
 
 int main() 
 {	
+	srand(clock());
+
 	PrintConsole topScreen;
     PrintConsole bottomScreen;
 	
 	videoSetMode( MODE_5_3D );
 	videoSetModeSub( MODE_0_2D  );
 	
-	glScreen2D();
+	//glScreen2D();
 	
 	consoleInit(&topScreen,1, BgType_Text4bpp, BgSize_T_256x256, 31,0, true, false);
 	bgSetPriority(0, 1);
@@ -37,9 +41,10 @@ int main()
     consoleSelect(&bottomScreen);
     iprintf("Press any button or tap screen\nto begin");
 		
-	while( 1 ) 
-	{			
-		glFlush( 0 );
+	while(1) 
+	{
+	
+		//glFlush( 0 );
 		swiWaitForVBlank();			
 	}
 
