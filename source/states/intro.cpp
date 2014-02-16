@@ -73,10 +73,17 @@ void Intro::Resume()
 
 }
 
+int result;
+
 void Intro::HandleEvents(GameEngine* game)
 {
-	
+	scanKeys();
+	int held = keysHeld();
+	if(held & KEY_A);
+	result = held;
 }
+
+
 
 void Intro::Update(GameEngine* game) 
 {
@@ -95,8 +102,10 @@ void Intro::Render(GameEngine* game)
                                );
 			
 	glColor( RGB15(0,31,31) );
+		
 	Font.PrintCentered( 0, 100, "FLAPPY NYAN" );
 	Font.PrintCentered( 0, 120, "Press any button to start" );
+	Font.PrintCentered( 0, 140, result );
 	
 	glEnd2D();
 	glFlush(0);                    		
