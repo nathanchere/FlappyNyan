@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <../lib/gl2d.h>
 #include "font.h"
+#include "font_8x8.h"
 #include "../h/gameengine.h"
 #include "../h/gamestate.h"
 
@@ -26,9 +27,9 @@ void Intro::Init()
 	font.numColors =  fontPalLen / 2;
 	font.bpp = 4;
 	font.asciiOffset = 32;
-	font.convertSingleColor = false;
-			
+	font.convertSingleColor = false;			
 	consoleSetFont(&bottomScreen, &font);
+	
 	consoleSetFont(&topScreen, &font);	
 }
 
