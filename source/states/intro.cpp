@@ -52,19 +52,19 @@ void Intro::Update(GameEngine* game)
 	
 	if(ticks < 40)
 		color = 0;
-	else if(ticks < 168)
+	else if(ticks <= 168)
 	{
 		int val = (ticks - 40) * 0.25;
 		color = RGB15(val,val,val);
 	}
-	else if(ticks < 300)
+	else if(ticks <= 300)
 		color = RGB15(31,31,31);
-	else if(ticks < 428)
+	else if(ticks <= 428)
 	{
 		int val = 32 - ((ticks - 300) * 0.25);
 		color = RGB15(val,val,val);
 	}
-	else if(ticks < 450)
+	else if(ticks <= 450)
 		color = 0;
 	else game->ChangeState(Menu::Instance());
 	
