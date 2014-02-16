@@ -24,4 +24,25 @@ protected:
 	GameState() { }
 };
 
+class IntroState : public GameState
+{
+public:
+	void Init();
+	void Dispose();
+
+	void Pause();
+	void Resume();
+
+	void HandleEvents(GameEngine* game);
+	void Update(GameEngine* game);
+	void Render(GameEngine* game);
+
+	static IntroState* Instance() {	return &_introState; }
+
+protected:
+	IntroState() { }
+
+private:
+	static IntroState _introState;
+};
 #endif
