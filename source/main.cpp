@@ -3,7 +3,7 @@
 #include <nds.h>
 #include <stdio.h>
 #include <string.h>
-#include "font.h"
+#include <nf_lib.h>
 #include "h/gameengine.h"
 #include "h/gamestate.h"
 
