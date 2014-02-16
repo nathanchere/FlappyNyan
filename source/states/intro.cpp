@@ -3,46 +3,23 @@
 #include <../lib/gl2d.h>
 
 #include "../h/bitmapfont.h"
-#include "font.h"
-#include "font_8x8.h"
-#include "../h/font_8x8_uv.h"
 
 #include "../h/gamestate.h"
 #include "../h/gameengine.h"
 #include "../h/gamestate.h"
 
+#include "../h/global.h"
+
 Intro Intro::_state;
 
-ConsoleFont font;
-BitmapFont Font;
-
-PrintConsole topScreen;
-PrintConsole bottomScreen;
-glImage  FontImages[FONT_8X8_NUM_IMAGES];
-
 void Intro::Init()
-{	
-	//consoleInit(&topScreen,1, BgType_Text4bpp, BgSize_T_256x256, 31,0, true, false);
+{		
 	bgSetPriority(0, 1);
-
-	vramSetBankI( VRAM_I_SUB_BG_0x06208000 );
-	consoleInit( &bottomScreen, 0, BgType_Text4bpp, BgSize_T_256x256, 20, 0, false, false );	
-	
-
-	font.gfx = (u16*)fontTiles;
-	font.pal = (u16*)fontPal;
-	font.numChars = 95;
-	font.numColors =  fontPalLen / 2;
-	font.bpp = 4;
-	font.asciiOffset = 32;
-	font.convertSingleColor = false;			
-	consoleSetFont(&bottomScreen, &font);
-
-	glScreen2D();
+	vramSetBankI( VRAM_I_SUB_BG_0x06208000 );	
 	vramSetBankA( VRAM_A_TEXTURE );
 	vramSetBankE(VRAM_E_TEX_PALETTE); 
 	
-	Font.Load( FontImages,				// pointer to glImage array
+	font_small.Load( FontImages,				// pointer to glImage array
 			   FONT_8X8_NUM_IMAGES, 		// Texture packer auto-generated #define
 			   font_8x8_texcoords,		// Texture packer auto-generated array
 			   GL_RGB256,				// texture type for glTexImage2D() in videoGL.h 
@@ -100,8 +77,8 @@ void Intro::Render(GameEngine* game)
 			
 	glColor( RGB15(0,31,31) );
 		
-	Font.PrintCentered( 0, 100, "FLAPPY NYAN" );
-	Font.PrintCentered( 0, 120, "Press any button to start" );
+	font_small.PrintCentered( 0, 100, "FLAPPY NYAN" );
+	font_small.PrintCentered( 0, 120, "Press any button to start" );
 	
 	glEnd2D();
 	glFlush(0);                    		

@@ -8,7 +8,7 @@
 		//	Format:
 		//	U,V,Width,Height
 
-extern const unsigned int font_8x8_texcoords[] = {
+const unsigned int font_8x8_texcoords[] = {
  0, 0, 8, 9,				// 0
  8, 0, 8, 9,				// 1
  16, 0, 8, 9,				// 2
