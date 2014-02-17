@@ -9,7 +9,6 @@
 
 Menu Menu::_state;
 
-
 void Menu::Init()
 {			
     iprintf("Menu.Init\n");
@@ -44,12 +43,14 @@ void Menu::Render(GameEngine* game)
 {
 	glBegin2D();        
 	
-	glBoxFilledGradient( 0, 0, 255, 191,
-								 RGB15( 31,  0,  0 ),
-								 RGB15(  0, 31,  0 ),
-								 RGB15( 31,  0, 31 ),
-								 RGB15(  0, 31, 31 )
-                               );
+	// backdrop
+	glBoxFilled( 0, 0, 259, 191,0);
+	
+	// starfield
+	
+	// nyancat
+	
+	// press start
 				
 	glEnd2D();
 	glFlush(0);                    		

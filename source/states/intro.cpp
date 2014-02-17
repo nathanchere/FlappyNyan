@@ -14,6 +14,8 @@ uint timeElapsed;
 uint ticks;
 int color;
 
+int minutes;
+
 void Intro::Init()
 {			
     iprintf("Intro.Init\n");
