@@ -24,6 +24,10 @@ protected:
 	GameState() { }	
 };
 
+#include <nds.h>
+#include <stdio.h>
+#include <../lib/gl2d.h>
+
 #include "gamestates/game.h"
 #include "gamestates/gameover.h"
 #include "gamestates/menu.h"
