@@ -1,20 +1,9 @@
-#include <nds.h>
-#include <stdio.h>
-#include <../lib/gl2d.h>
-
 #include "../h/gamestate.h"
 #include "../h/gameengine.h"
 
 #include "../h/global.h"
 
-#define TIMER_SPEED (BUS_CLOCK/1024)
-
 Intro Intro::_state;
-uint timeElapsed;
-uint ticks;
-int color;
-
-int minutes;
 
 void Intro::Init()
 {			

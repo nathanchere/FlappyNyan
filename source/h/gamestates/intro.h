@@ -25,6 +25,10 @@ protected:
 
 private:
 	static Intro _state;
+	
+	uint timeElapsed;
+	uint ticks;
+	int color;
 
 };
 
