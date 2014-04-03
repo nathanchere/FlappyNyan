@@ -9,19 +9,15 @@ Dependencies
 ------------
 [Easy GL2D DS](http://rel.phatcode.net/junk.php?id=117) for 3D-accelerated 2D wrapper.
 
-[Rel's Texture Packer](http://rel.phatcode.net/junk.php?id=106) used for generating textures for sprite and font maps.
-
-
-
 Credits and thanks
 ------------------
 
 * Nguyễn Hà Đông - the original Flappy Birds game
 * DevKitPro - making cross-compiling for NDS a breeze
 * no$gba - ultrea-light-weight emulator for shorter test cycles
-* Relminator - Easy GL2D DS library
+* Relminator - EasyGL2D DS library
 * Adigun A. Polack - font graphics
-* Reference material: [GameDevGeek](http://gamedevgeek.com/tutorials/managing-game-states-in-c/), 
+* Reference material: [GameDevGeek](http://gamedevgeek.com/tutorials/managing-game-states-in-c/)
 
 License
 -------
